@@ -62,6 +62,19 @@ app.get("/parks", (req, res) => {
   }
 })
 
+app.post("/parks/add", (req, res) => {
+  const parks = new Park(req.body)
+  parks.save()
+    .then(() => {
+      console.log("save")
+      res.status(201).json({created: true})
+    })
+    .catch(err => {
+      console.log("error")
+      res.status(400).send(err)
+    })
+})
+
 app.listen(8080, () => {
   console.log("Server running!")
 })
