@@ -5,8 +5,10 @@ class Header extends React.Component {
 
   render() {
     return (
-      <div className="header">
-        <h1>Hund parker i Stockholm</h1>
+      <div className="heroContainer">
+        <div className="heroText">
+          <h1>Hund parker i Stockholm</h1>
+        </div>
       </div>
 
     )

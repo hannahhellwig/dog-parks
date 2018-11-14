@@ -1,12 +1,18 @@
 import React from "react"
-import "./park-listing.scss"
 
 class Park extends React.Component {
 
   render() {
     return (
       <div className="parkContainer">
-        hej
+        <div className="Box">
+          <h2>{this.props.title}</h2>
+          <p>{this.props.location}</p>
+          <p>{this.props.description}</p>
+        </div>
+        <div className="Box">
+          <img className="parkImage" src={this.props.image} />
+        </div>
       </div>
 
     )

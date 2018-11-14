@@ -51,20 +51,15 @@ const Park = mongoose.model("Park", {
 
 
 app.get("/parks", (req, res) => {
-  if (req.query.style) {
-    Park.find({ style: req.query.style }).then(parks => {
-      res.json(parks)
-    })
-  } else {
-    Park.find().then(parks => {
-      res.json(parks)
-    })
-  }
+  Park.find().then(parks => {
+    // console.log("parks: ", parks)
+    res.json(parks)
+  })
 })
 
-app.post("/parks/add", (req, res) => {
-  const parks = new Park(req.body)
-  parks.save()
+app.post("/parks", (req, res) => {
+  const park = new Park(req.body)
+  park.save()
     .then(() => {
       console.log("save")
       res.status(201).json({created: true})
