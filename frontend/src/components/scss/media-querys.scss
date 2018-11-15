@@ -1,4 +1,26 @@
 @media screen and (min-width: 600px) {
+
+  .pageContent {
+    display: flex;
+    flex-direction: row;
+  }
+
+  @mixin position($top, $right) {
+    padding: 0;
+    width: 50%;
+    position: absolute;
+    top: $top;
+    right: $right;
+  }
+
+  .pageContentLeft {
+    @include position(558, 558);
+  }
+
+  .pageContentRight {
+    @include position(558, 0);
+  }
+
   .parkContainer {
     flex-direction: row;
 

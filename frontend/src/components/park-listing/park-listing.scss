@@ -7,6 +7,21 @@ body {
   font-family: sans-serif;
 }
 
+.pageContent {
+  width: 100%;
+}
+
+.pageContentLeft {
+  width: 100%;
+  height: 350px;
+  top: auto;
+}
+
+.pageContentRight {
+  padding-top: 10px;
+  width: 100%;
+}
+
 .parkContainer {
   box-sizing: border-box;
   display: flex;
