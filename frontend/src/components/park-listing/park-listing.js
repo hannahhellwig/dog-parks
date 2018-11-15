@@ -1,6 +1,6 @@
 import React from "react"
 import "./park-listing.scss"
-import "index.scss"
+import Button from "../buttons/button.js"
 import { HashRouter as Router, Route, Link } from "react-router-dom"
 import Header from "components/header/header"
 import Park from "./park"
@@ -31,7 +31,7 @@ class ParkListing extends React.Component {
       <div className="pageContainer">
         <Header />
         <Link to="/add-park">
-          <button className="addButton">Tipsa om en park</button>
+          <Button>Tipsa om en park</Button>
         </Link>
         {this.state.parks.map(park => (
           <Park

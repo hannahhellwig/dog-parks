@@ -1,6 +1,6 @@
 import React from "react"
 import "./add-park.scss"
-import "index.scss"
+import Button from "../buttons/button.js"
 import { HashRouter as Router, Route, Link } from "react-router-dom"
 import Header from "components/header/header"
 
@@ -61,7 +61,8 @@ class AddPark extends React.Component {
 
     render() {
       return (
-        <div>
+        <div className="backgroundImage">
+        <h1>Tipsa om en park!</h1>
           <div className="container">
             <form className="addParkForm" onSubmit={this.handleSubmit}>
               <input
@@ -98,7 +99,9 @@ class AddPark extends React.Component {
                 className="button" />
             </form>
             <Link to="/">
-              <button className="addButton">Tillbaka</button>
+              <Button onClick={this.handleClickLoadMore}>
+                <p>Tillbaka</p>
+              </Button>
             </Link>
           </div>
         </div>

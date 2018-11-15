@@ -1,0 +1,19 @@
+$lightGreen: #e7f5f2;
+$pink: #f9c7cf;
+$middleGreen: #12776f;
+$darkGreen: #0f4137;
+$forestGreen: #0D512F;
+$shimringBlush: #D97E96;
+$palmLeaf: #699444;
+
+.button {
+  width: 80px;
+  padding: 0;
+  margin: 10px;
+  color: $lightGreen;
+  font-size: 14px;
+  text-decoration: none;
+  border: none;
+  background-color: $forestGreen;
+  border-radius: 24px;
+}

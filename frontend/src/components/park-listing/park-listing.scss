@@ -1,11 +1,11 @@
-// @import 'color';
-$lightGreen: #e7f5f2;
-$pink: #f9c7cf;
-$middleGreen: #12776f;
-$darkGreen: #0f4137;
-$forestGreen: #0D512F;
-$shimringBlush: #D97E96;
-$parmLeaf: #699444;
+@import "../buttons/button.scss";
+@import "../color.scss";
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+}
 
 .parkContainer {
   box-sizing: border-box;

@@ -1,10 +1,22 @@
-$lightGreen: #e7f5f2;
-$pink: #f9c7cf;
-$middleGreen: #12776f;
-$darkGreen: #0f4137;
-$forestGreen: #0D512F;
-$shimringBlush: #D97E96;
-$parmLeaf: #699444;
+@import "../buttons/button.scss";
+@import "../color.scss";
+
+.backgroundImage {
+  background-image: url("/images/hero.jpg");
+  height: 100vh;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+
+  h1 {
+    color: $lightGreen;
+    text-align: center;
+    position: absolute;
+    top: 100px;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
 
 .container {
   align-items: center;
@@ -14,14 +26,16 @@ $parmLeaf: #699444;
   left: 50%;
   transform: translate(-50%, -50%);
 
-  form {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    input {
-      display: block;
-      margin: 20px;
+    form {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+
+      input {
+        display: block;
+        margin: 20px;
+      }
     }
   }
 }
