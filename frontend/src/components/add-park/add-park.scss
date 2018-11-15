@@ -1,5 +1,5 @@
-@import "../buttons/button.scss";
-@import "../color.scss";
+@import "../scss/color.scss";
+@import "../scss/fonts.scss";
 
 .backgroundImage {
   background-image: url("/images/hero.jpg");
@@ -16,6 +16,7 @@
     top: 100px;
     left: 50%;
     transform: translate(-50%, -50%);
+    font-family: $quicksand
   }
 
 .container {
@@ -35,6 +36,7 @@
       input {
         display: block;
         margin: 20px;
+        width: 160px;
       }
     }
   }

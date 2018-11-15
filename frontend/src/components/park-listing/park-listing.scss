@@ -1,5 +1,5 @@
-@import "../buttons/button.scss";
-@import "../color.scss";
+@import "../scss/color.scss";
+@import "../scss/fonts.scss";
 
 body {
   margin: 0;
@@ -24,13 +24,4 @@ body {
   }
 }
 
-@media screen and (min-width: 600px) {
-  .parkContainer {
-    flex-direction: row;
-
-    .Box {
-      width: 50%;
-      padding: 10px;
-    }
-  }
-}
+@import "../scss/media-querys.scss";

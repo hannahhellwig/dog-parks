@@ -1,0 +1,10 @@
+@media screen and (min-width: 600px) {
+  .parkContainer {
+    flex-direction: row;
+
+    .Box {
+      width: 50%;
+      padding: 10px;
+    }
+  }
+}

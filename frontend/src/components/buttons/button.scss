@@ -1,19 +1,32 @@
-$lightGreen: #e7f5f2;
-$pink: #f9c7cf;
-$middleGreen: #12776f;
-$darkGreen: #0f4137;
-$forestGreen: #0D512F;
-$shimringBlush: #D97E96;
-$palmLeaf: #699444;
+@import "../scss/color.scss";
+@import "../scss/fonts.scss";
 
-.button {
-  width: 80px;
-  padding: 0;
+@mixin button($color, $background) {
+  background-color: $background;
+  color: $color;
+  width: 160px;
+  padding: 10px;
   margin: 10px;
-  color: $lightGreen;
   font-size: 14px;
+  font-family: $button;
+  letter-spacing: 1px;
   text-decoration: none;
   border: none;
-  background-color: $forestGreen;
   border-radius: 24px;
+}
+
+.submitButton {
+  @include button($primaryButtonColor, $primaryButtonBackgroundColor);
+
+  &:hover {
+      background-color: $primaryButtonBackgroundColorHover;
+    }
+}
+
+.button {
+  @include button($secondaryButtonColor, $secondaryButtonBackgroundColor);
+
+  &:hover {
+        background-color: $secondaryButtonBackgroundColorHover;
+    }
 }

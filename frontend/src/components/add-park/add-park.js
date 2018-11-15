@@ -95,13 +95,11 @@ class AddPark extends React.Component {
                 required />
               <input
                 type="submit"
-                value="SEND"
-                className="button" />
+                value="Skicka"
+                className="submitButton" />
             </form>
             <Link to="/">
-              <Button onClick={this.handleClickLoadMore}>
-                <p>Tillbaka</p>
-              </Button>
+              <Button title="Tillbaka" />
             </Link>
           </div>
         </div>

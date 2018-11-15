@@ -7,7 +7,7 @@ class Header extends React.Component {
     return (
       <div className="heroContainer">
         <div className="heroText">
-          <h1>Hund parker i Stockholm</h1>
+          <h1>Hundparker i Stockholm</h1>
         </div>
       </div>
 

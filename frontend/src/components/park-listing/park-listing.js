@@ -31,7 +31,7 @@ class ParkListing extends React.Component {
       <div className="pageContainer">
         <Header />
         <Link to="/add-park">
-          <Button>Tipsa om en park</Button>
+          <Button title="Tipsa om en park!" />
         </Link>
         {this.state.parks.map(park => (
           <Park
