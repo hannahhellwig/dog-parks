@@ -38,11 +38,13 @@ class ParkListing extends React.Component {
                 title={park.title}
                 location={park.location}
                 description={park.description}
-                image={park.image} />
+                image={park.image}
+                position={park.position} />
             ))}
           </div>
           <div className="pageContentRight">
-            <MapContainer />
+            <MapContainer
+              parks={this.state.parks} />
           </div>
         </div>
       </div>
