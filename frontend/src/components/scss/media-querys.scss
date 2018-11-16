@@ -11,6 +11,9 @@
     position: absolute;
     top: $top;
     right: $right;
+    height: calc(100vh - 50px);
+    overflow: scroll;
+    display: block;
   }
 
   .pageContentLeft {

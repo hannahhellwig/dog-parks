@@ -1,8 +1,7 @@
 import React from "react"
 import "./park-listing.scss"
-import Button from "../buttons/button.js"
-import { HashRouter as Router, Route, Link } from "react-router-dom"
 import Header from "components/header/header"
+import Hero from "components/header/hero"
 import Park from "./park"
 import MapContainer from "./map-container"
 
@@ -30,15 +29,10 @@ class ParkListing extends React.Component {
   render() {
     return (
       <div className="pageContainer">
+        <Hero />
         <Header />
-        <Link to="/add-park">
-          <Button title="Tipsa om en park!" />
-        </Link>
         <div className="pageContent">
           <div className="pageContentLeft">
-            <MapContainer />
-          </div>
-          <div className="pageContentRight">
             {this.state.parks.map(park => (
               <Park
                 title={park.title}
@@ -46,6 +40,9 @@ class ParkListing extends React.Component {
                 description={park.description}
                 image={park.image} />
             ))}
+          </div>
+          <div className="pageContentRight">
+            <MapContainer />
           </div>
         </div>
       </div>

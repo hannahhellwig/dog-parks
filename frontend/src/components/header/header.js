@@ -1,14 +1,16 @@
 import React from "react"
 import "./header.scss"
+import Button from "../buttons/button.js"
+import { HashRouter as Router, Route, Link } from "react-router-dom"
 
 class Header extends React.Component {
 
   render() {
     return (
-      <div className="heroContainer">
-        <div className="heroText">
-          <h1>Hundparker i Stockholm</h1>
-        </div>
+      <div className="headerContainer">
+        <Link to="/add-park">
+          <Button title="Tipsa om en park!" />
+        </Link>
       </div>
 
     )

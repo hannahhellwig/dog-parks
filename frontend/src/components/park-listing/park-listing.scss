@@ -12,14 +12,15 @@ body {
 }
 
 .pageContentLeft {
+  padding: 0;
   width: 100%;
-  height: 350px;
-  top: auto;
 }
 
 .pageContentRight {
-  padding-top: 10px;
   width: 100%;
+  height: 50px;
+  top: auto;
+  display: none;
 }
 
 .parkContainer {
