@@ -7,7 +7,7 @@ const app = express()
 app.use(bodyParser.json())
 app.use(cors())
 
-const mongoUrl = "mongodb://localhost/finalProject"
+const mongoUrl = process.env.MONGO_URL || "mongodb://localhost/finalProject"
 mongoose.connect(mongoUrl, { useNewUrlParser: true })
 mongoose.Promise = Promise
 
@@ -39,7 +39,7 @@ const Park = mongoose.model("Park", {
     enum: ["Dålig", "Bra", "Jättebra"]
   },
   position: {
-    type: String,
+    type: Object,
     required: true
   }
 })
@@ -74,6 +74,7 @@ app.post("/parks", (req, res) => {
     })
 })
 
-app.listen(8080, () => {
-  console.log("Server running!")
+const port = process.env.PORT || 8080
+app.listen(port, () => {
+  console.log(`Server running on port ${port}`)
 })
