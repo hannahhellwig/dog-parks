@@ -32,6 +32,10 @@ class AddPark extends React.Component {
       this.setState({ image: event.target.value })
     }
 
+    handlePosition = event => {
+      this.setState({ position: event.target.value })
+    }
+
     handleSubmit = event => {
       event.preventDefault()   //prevents the default behavior of submit
 
@@ -50,7 +54,8 @@ class AddPark extends React.Component {
               title: "",
               location: "",
               description: "",
-              image: ""
+              image: "",
+              position: ""
             })
           }
         })
@@ -93,6 +98,12 @@ class AddPark extends React.Component {
                 onChange={this.handleImage}
                 value={this.state.image}
                 required />
+              <input
+                type="text"
+                placeholder="Position"
+                name="position"
+                onChange={this.handlePosition}
+                value={this.state.position} />
               <input
                 type="submit"
                 value="Skicka"

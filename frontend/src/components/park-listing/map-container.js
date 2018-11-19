@@ -51,15 +51,14 @@ export class MapContainer extends Component {
     }
   }
 
-  // INvalid prop type, got sring expected object på this.props.position
-
   render() {
-    console.log(this.props.parks)
-    console.log("title:", this.props.parks[0].title)
-    console.log("position:", this.props.parks[0].position)
+    // console.log(this.props.parks)
+    // console.log("title:", this.props.parks[0].title)
+    // console.log("position:", this.props.parks[0].position)
     return (
       <Map
         google={this.props.google}
+        onClick={this.mapClicked}
         zoom={12}
         style={mapStyles}
         initialCenter={{
@@ -71,6 +70,7 @@ export class MapContainer extends Component {
           <Marker
             onClick={this.onMarkerClick}
             name={park.title}
+            location={park.location}
             position={park.position} />
         ))}
         <InfoWindow
@@ -78,6 +78,7 @@ export class MapContainer extends Component {
           visible={this.state.showingInfoWindow}>
           <div>
             <h1>{this.state.selectedPlace.name}</h1>
+            <p>{this.state.selectedPlace.location}</p>
           </div>
         </InfoWindow>
       </Map>
@@ -88,15 +89,3 @@ export class MapContainer extends Component {
 export default GoogleApiWrapper({
   apiKey: "AIzaSyBYQ3ZInKUWVTsW_6JaRpNmpIIOzeiou5U"
 })(MapContainer)
-
-// {this.props.parks.map(park => (
-//   <Marker
-//     onClick={this.onMarkerClick}
-//     name={park.title}
-//     position={park.position} />
-// ))}
-
-// <Marker
-//   onClick={this.onMarkerClick}
-//   name={this.props.parks[4].title}
-//   position={this.props.parks[4].position} />
