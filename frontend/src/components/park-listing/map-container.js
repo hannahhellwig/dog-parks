@@ -1,5 +1,6 @@
 import React, { Component } from "react"
 import { Map, GoogleApiWrapper, InfoWindow, Marker } from "google-maps-react"
+import ParkInfo from "./park-info"
 
 const mapStyles = {
   width: "100%",
@@ -40,12 +41,14 @@ export class MapContainer extends Component {
       selectedPlace: props,
       activeMarker: marker,
       showingInfoWindow: true,
+      showingParkInfo: true
     })
 
   onMapClicked = props => {
     if (this.state.showingInfoWindow) {
       this.setState({
         showingInfoWindow: false,
+        showingParkInfo: false,
         activeMarker: null
       })
     }
@@ -81,6 +84,7 @@ export class MapContainer extends Component {
             <p>{this.state.selectedPlace.location}</p>
           </div>
         </InfoWindow>
+        <ParkInfo />
       </Map>
     )
   }
