@@ -54,6 +54,7 @@ export class MapContainer extends Component {
   // INvalid prop type, got sring expected object på this.props.position
 
   render() {
+    console.log(this.props.parks)
     console.log("title:", this.props.parks[0].title)
     console.log("position:", this.props.parks[0].position)
     return (
@@ -65,11 +66,13 @@ export class MapContainer extends Component {
           lat: 59.334591,
           lng: 18.063240
         }}>
-        <Marker
-          onClick={this.onMarkerClick}
-          name={this.props.parks[0].title}
-          position={this.props.parks[0].position} />
 
+        {this.props.parks.map(park => (
+          <Marker
+            onClick={this.onMarkerClick}
+            name={park.title}
+            position={park.position} />
+        ))}
         <InfoWindow
           marker={this.state.activeMarker}
           visible={this.state.showingInfoWindow}>
@@ -95,5 +98,5 @@ export default GoogleApiWrapper({
 
 // <Marker
 //   onClick={this.onMarkerClick}
-//   name={"Tantolundens Hundrastgård"}
-//   position={{lat: 59.312958, lng: 18.044127}} />
+//   name={this.props.parks[4].title}
+//   position={this.props.parks[4].position} />
