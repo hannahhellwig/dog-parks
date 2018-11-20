@@ -8,6 +8,10 @@ class Header extends React.Component {
   render() {
     return (
       <div className="headerContainer">
+        <form className="searchParkForm" onSubmit={this.onSearch}>
+          <input id="search" type="text" placeholder="Sök..." onChange={event => this.setState({ searcParkTitle: event.target.value })} />
+          <input className="submitButton" type="submit" value="Sök" />
+        </form>
         <Link to="/add-park">
           <Button title="Tipsa om en park!" />
         </Link>

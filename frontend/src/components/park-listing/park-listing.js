@@ -1,6 +1,7 @@
 import React from "react"
 import "./park-listing.scss"
 import Header from "components/header/header"
+import Footer from "components/footer/footer"
 import Hero from "components/header/hero"
 import Park from "./park"
 import MapContainer from "./map-container"
@@ -50,10 +51,6 @@ class ParkListing extends React.Component {
       <div className="pageContainer">
         <Hero />
         <Header />
-        <form className="searchParkForm" onSubmit={this.onSearch}>
-          <input id="search" type="text" placeholder="Sök..." onChange={event => this.setState({ searcParkTitle: event.target.value })} />
-          <input type="submit" />
-        </form>
         <div className="pageContent">
           <div className="pageContentLeft">
             {this.state.parks.map(park => (

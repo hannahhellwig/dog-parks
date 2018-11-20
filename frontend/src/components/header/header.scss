@@ -4,5 +4,19 @@
 .headerContainer {
   height: 58px;
   width: 100%;
-  background-color: $darkGreen;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+input {
+  margin: 10px;
+  width: 160px;
+  padding: 10px;
+  margin: 10px;
+  font-size: 14px;
+  font-family: $button;
+  letter-spacing: 1px;
+  text-decoration: none;
+  border: none;
 }
