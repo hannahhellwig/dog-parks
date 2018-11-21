@@ -37,9 +37,7 @@ class ParkListing extends React.Component {
 
   render() {
     const filteredParks = this.state.parks.filter(
-      park => {
-        return park.title.indexOf(this.state.search) !== -1
-      }
+      park => park.title.indexOf(this.state.search) !== -1
     )
     return (
       <div className="pageContainer">

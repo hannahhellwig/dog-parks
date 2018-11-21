@@ -4,16 +4,15 @@
 .backgroundImage {
   background-image: url("/images/hero.jpg");
   height: 100vh;
-  background-position: center;
+  background-position: 63% 50%;
   background-repeat: no-repeat;
   background-size: cover;
-  position: relative;
 
   h1 {
     color: $lightGreen;
     text-align: center;
     position: absolute;
-    top: 100px;
+    top: 30px;
     left: 50%;
     transform: translate(-50%, -50%);
     font-family: $quicksand
@@ -35,9 +34,11 @@
 
       input {
         display: block;
-        margin: 20px;
+        margin: 10px;
         width: 160px;
       }
     }
   }
 }
+
+@import "../scss/media-querys.scss";
