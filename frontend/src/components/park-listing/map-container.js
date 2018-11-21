@@ -3,9 +3,10 @@ import { Map, GoogleApiWrapper, InfoWindow, Marker } from "google-maps-react"
 import ParkInfo from "./park-info"
 
 const mapStyles = {
-  width: "100%",
+  width: "calc(100% - 20px)",
   height: "500px",
-  display: "block"
+  display: "block",
+  margin: "0 10px 10px 10px"
 }
 
 export class MapContainer extends Component {

@@ -50,7 +50,7 @@ class ParkListing extends React.Component {
     return (
       <div className="pageContainer">
         <Hero />
-        <Header />
+        <Header onSearch={this.onSearch} />
         <div className="pageContent">
           <div className="pageContentLeft">
             {this.state.parks.map(park => (

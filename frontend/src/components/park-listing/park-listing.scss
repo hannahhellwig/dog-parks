@@ -5,7 +5,7 @@ body {
   margin: 0;
   padding: 0;
   font-family: sans-serif;
-  background: linear-gradient(to left, $shimringBlush 0%, $pink 100%);
+  background: linear-gradient(to left, $forestGreen 0%, $lightGreen 100%);
 }
 
 .pageContent {
@@ -16,13 +16,15 @@ body {
 .pageContentLeft {
   padding: 0;
   width: 100%;
+  position: absolute;
+  top: 730px;
 }
 
 .pageContentRight {
   width: 100%;
   height: 50px;
   top: auto;
-  display: none;
+  display: block;
   margin-top: 10px;
 }
 
@@ -31,10 +33,9 @@ body {
   display: flex;
   flex-direction: column;
   width: calc(100% - 20px);
-  margin: 10px;
+  margin: 0 10px 10px 10px;
   // border: 1px solid $middleGreen;
   background: #fff;
-  height: 250px;
   // box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 
   .Box {
@@ -43,8 +44,20 @@ body {
 
   img {
     width: 100%;
-    height: 100%;
+    height: 120px;
     object-fit: cover;
+  }
+
+  h2 {
+    padding-left: 5px;
+    margin-top: 0;
+    font-family: $open-sans;
+  }
+
+  p {
+    padding-left: 5px;
+    font-family: $lato;
+    font-size: 14px;
   }
 }
 
