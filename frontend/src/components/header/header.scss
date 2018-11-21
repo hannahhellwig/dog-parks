@@ -5,15 +5,18 @@
   height: 58px;
   width: 100%;
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   align-items: center;
+}
+
+.button {
+  margin: 10px 20px 10px 0;
 }
 
 input {
   margin: 10px;
-  width: 80px;
+  width: 120px;
   padding: 10px;
-  margin: 10px;
   font-size: 14px;
   font-family: $button;
   letter-spacing: 1px;

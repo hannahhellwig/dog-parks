@@ -55,19 +55,13 @@
     }
   }
 
-  //----------Button------------
+  //-------header------------
+  .headerContainer {
+    justify-content: space-between;
 
-  .submitButton {
-    width: 160px;
-    font-size: 14px;
-  }
-
-  .button {
-    width: 160px;
-    font-size: 14px;
-  }
-
-  input {
-    width: 160px;
+    input {
+      margin: 10px;
+      width: 160px;
+    }
   }
 }

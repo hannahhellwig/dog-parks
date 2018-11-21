@@ -15,7 +15,7 @@ class ParkListing extends React.Component {
     super(props)
     this.state = {
       parks: [],
-      searchParkTitle: ""
+      search: ""
     }
   }
 
@@ -29,32 +29,28 @@ class ParkListing extends React.Component {
       })
   }
 
-  onSearch = event => {
-    event.preventDefault()
-    const url = "http://localhost:8080/parks?title=" + this.state.searchParkTitle
-    fetch(url)
-      .then(response => response.json())
-      .then(json => {
-        this.setState({
-          parks: json
-        })
-        console.log(this.state.parks)
-        console.log(this.state.searchParkTitle)
-      })
-      .catch(error => {
-        console.log(error)
-      })
+  updateSearch = event => {
+    this.setState({
+      search: event.target.value
+    })
   }
 
   render() {
+    const filteredParks = this.state.parks.filter(
+      park => {
+        return park.title.indexOf(this.state.search) !== -1
+      }
+    )
     return (
       <div className="pageContainer">
         <Hero />
-        <Header onSearch={this.onSearch} />
+        <Header
+          onChange={this.updateSearch} />
         <div className="pageContent">
           <div className="pageContentLeft">
-            {this.state.parks.map(park => (
+            {filteredParks.map(park => (
               <Park
+                key={park.id}
                 title={park.title}
                 location={park.location}
                 description={park.description}
@@ -98,4 +94,21 @@ export default ParkListing
 
 // filterParks = () => {
 //   this.setState({ filteredParks: this.state.filteredParks })
+// }
+
+// onSearch = event => {
+//   event.preventDefault()
+//   const url = "http://localhost:8080/parks?title=" + this.state.searchParkTitle
+//   fetch(url)
+//     .then(response => response.json())
+//     .then(json => {
+//       this.setState({
+//         parks: json
+//       })
+//       console.log(this.state.parks)
+//       console.log(this.state.searchParkTitle)
+//     })
+//     .catch(error => {
+//       console.log(error)
+//     })
 // }
