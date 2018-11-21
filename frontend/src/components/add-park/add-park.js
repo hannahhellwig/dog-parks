@@ -12,7 +12,10 @@ class AddPark extends React.Component {
       title: "",
       location: "",
       description: "",
-      image: ""
+      image: "",
+      position: "",
+      lat: "",
+      lang: ""
     }
   }
 
@@ -32,12 +35,16 @@ class AddPark extends React.Component {
       this.setState({ image: event.target.value })
     }
 
-    handlePosition = event => {
-      this.setState({ position: event.target.value })
+    handleLat = event => {
+      this.setState({ lat: event.target.value })
+    }
+
+    handleLng = event => {
+      this.setState({ lng: event.target.value })
     }
 
     handleSubmit = event => {
-      event.preventDefault()   //prevents the default behavior of submit
+      event.preventDefault()
 
       fetch("http://localhost:8080/parks", {
         method: "POST",
@@ -45,7 +52,10 @@ class AddPark extends React.Component {
           "Accept": "application/json",
           "Content-Type": "application/json"
         },
-        body: JSON.stringify(this.state)
+        body: JSON.stringify({
+          ...this.state,
+          position: { lat: JSON.parse(this.state.lat), lng: JSON.parse(this.state.lng) }
+        })
       })
 
         .then(response => {
@@ -100,10 +110,16 @@ class AddPark extends React.Component {
                 required />
               <input
                 type="text"
-                placeholder="Position"
-                name="position"
-                onChange={this.handlePosition}
-                value={this.state.position} />
+                placeholder="lat"
+                name="lat"
+                onChange={this.handleLat}
+                value={this.state.lat} />
+              <input
+                type="text"
+                placeholder="lng"
+                name="lng"
+                onChange={this.handleLng}
+                value={this.state.lng} />
               <input
                 type="submit"
                 value="Skicka"
