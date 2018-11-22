@@ -5,7 +5,8 @@ body {
   margin: 0;
   padding: 0;
   font-family: sans-serif;
-  background: linear-gradient(to left, #ee9ca7, #ffdde1)
+  background: $paleSilverPink;
+  background: linear-gradient(to left, $palePurple 0%, $paleSilverPink 50%, $palePink 100%);
 }
 
 .pageContent {
@@ -58,12 +59,12 @@ body {
   h2 {
     padding-left: 5px;
     margin-top: 0;
-    font-family: $open-sans;
+    font-family: $quicksand;
   }
 
   p {
     padding-left: 5px;
-    font-family: $lato;
+    font-family: $openSans;
     font-size: 14px;
   }
 }
