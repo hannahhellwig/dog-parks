@@ -1,12 +1,15 @@
 import React, { Component } from "react"
-import { Map, GoogleApiWrapper, InfoWindow, Marker } from "google-maps-react"
+import { Map, GoogleApiWrapper, InfoWindow, Marker, OverlayView, InfoBox } from "google-maps-react"
 import ParkInfo from "./park-info"
 
-const mapStyles = {
-  width: "calc(100% - 20px)",
-  height: "500px",
-  display: "block",
-  margin: "0 10px 10px 10px"
+const mapStyles = () => {
+  const height = window.innerWidth < 600 ? "350px" : "calc(100% - 10px)"
+  return {
+    height,
+    width: "calc(100% - 20px)",
+    display: "block",
+    margin: "0 10px 10px 10px"
+  }
 }
 
 export class MapContainer extends Component {
@@ -16,26 +19,6 @@ export class MapContainer extends Component {
     activeMarker: {},          //Shows the active marker upon click
     selectedPlace: {}         //Shows the infoWindow to the selected place upon a marker
   }
-
-  // for(const i = 0;i < parks.length;i++){
-  //   addMarker(parks[i]);
-  // }
-
-  // addMarker = props => {
-  //   const parks = new google.maps.Marker({
-  //     position:props.position,
-  //     map:map
-  //   })
-  //   if(props.content){
-  //     var infoWindow = new google.maps.InfoWindow({
-  //       content:props.content
-  //     })
-  //
-  //     parks.addListener('click', function(){
-  //       infoWindow.open(map, parks);
-  //     })
-  //   }
-  // }
 
   onMarkerClick = (props, marker) =>
     this.setState({
@@ -62,7 +45,7 @@ export class MapContainer extends Component {
         google={this.props.google}
         onClick={this.mapClicked}
         zoom={12}
-        style={mapStyles}
+        style={mapStyles()}
         className="mapStyle"
         initialCenter={{
           lat: 59.334591,
@@ -74,7 +57,14 @@ export class MapContainer extends Component {
             onClick={this.onMarkerClick}
             name={park.title}
             location={park.location}
-            position={park.position} />
+            position={park.position}
+            // options={{
+            //   icon: {
+            //     url: "../images/dog-marker.png",
+            //     // anchor: { width: 32, height: 32 },
+            //     scaledSize: { width: 30, height: 30 }
+            //   } }}
+              />
         ))}
         <InfoWindow
           marker={this.state.activeMarker}

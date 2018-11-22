@@ -18,7 +18,7 @@ body {
   padding: 0;
   width: 100%;
   position: absolute;
-  top: 730px;
+  top: calc(350px + 150px + 60px + 20px);
 }
 
 .pageContentRight {
