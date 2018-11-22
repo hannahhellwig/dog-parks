@@ -31,13 +31,13 @@ class ParkListing extends React.Component {
 
   updateSearch = event => {
     this.setState({
-      search: event.target.value
+      search: event.target.value.toLowerCase()
     })
   }
 
   render() {
     const filteredParks = this.state.parks.filter(
-      park => park.title.indexOf(this.state.search) !== -1
+      park => park.title.toLowerCase().indexOf(this.state.search) !== -1
     )
     return (
       <div className="pageContainer">
@@ -46,9 +46,9 @@ class ParkListing extends React.Component {
           onChange={this.updateSearch} />
         <div className="pageContent">
           <div className="pageContentLeft">
-            {filteredParks.map(park => (
+            {filteredParks.map((park, index) => (
               <Park
-                key={park.id}
+                key={index}
                 title={park.title}
                 location={park.location}
                 description={park.description}
