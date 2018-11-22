@@ -45,7 +45,7 @@ export class MapContainer extends Component {
       showingParkInfo: true
     })
 
-  onMapClicked = props => {
+  onMapClicked = () => {
     if (this.state.showingInfoWindow) {
       this.setState({
         showingInfoWindow: false,
@@ -56,15 +56,14 @@ export class MapContainer extends Component {
   }
 
   render() {
-    // console.log(this.props.parks)
-    // console.log("title:", this.props.parks[0].title)
-    // console.log("position:", this.props.parks[0].position)
+    console.log("activeMarker:", this.state.activeMarker)
     return (
       <Map
         google={this.props.google}
         onClick={this.mapClicked}
         zoom={12}
         style={mapStyles}
+        className="mapStyle"
         initialCenter={{
           lat: 59.334591,
           lng: 18.063240

@@ -7,7 +7,7 @@ import Park from "./park"
 import MapContainer from "./map-container"
 import Parkinfo from "./park-info"
 
-const parksApi = "http://localhost:8080/parks"
+const parksApi = "https://dog-parks.herokuapp.com/parks" //"http://localhost:8080/parks"
 
 class ParkListing extends React.Component {
 
