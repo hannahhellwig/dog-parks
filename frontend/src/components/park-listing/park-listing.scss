@@ -7,6 +7,7 @@ body {
   font-family: sans-serif;
   background: $paleSilverPink;
   background: linear-gradient(to left, $palePurple 0%, $paleSilverPink 50%, $palePink 100%);
+  background: url("/images/pattern.png"), linear-gradient(to left, $palePurple 0%, $paleSilverPink 50%, $palePink 100%);
 }
 
 .pageContent {
